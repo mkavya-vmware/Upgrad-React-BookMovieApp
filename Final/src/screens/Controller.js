@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Home from '../screens/home/Home.js';
 import Details from '../screens/details/Details.js';
+import BookShow from '../screens/bookshow/BookShow'
+import Confirmation from '../screens/confirmation/Confirmation'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class Controller extends Component {
@@ -17,6 +19,8 @@ class Controller extends Component {
          <div className="main-container">
      	    <Route exact path='/' render={(props) => <Home {...props} baseUrl = {this.baseUrl}/> }  />
           <Route path='/movie/:id' render={(props) => <Details {...props} baseUrl = {this.baseUrl} /> } />
+          <Route path='/bookshow/:id' render={(props) => <BookShow {...props} baseUrl = {this.baseUrl} /> } />
+          <Route path='/confirm/:id' render={(props) => <Confirmation {...props} baseUrl = {this.baseUrl}  /> } />
         </div>
       </Router>
 
